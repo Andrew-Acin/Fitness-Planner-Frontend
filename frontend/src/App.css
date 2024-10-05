@@ -1,0 +1,218 @@
+/* General styles for layout and fonts */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+h1, h2, h3 {
+  color: #333;
+  text-align: center;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Navbar Styles */
+.navbar-container {
+  background-color: #333;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* Centering the navbar items */
+}
+
+.navbar-stack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; /* Adjust width based on your layout */
+  max-width: 1200px; /* Set a max-width for responsiveness */
+}
+
+.navbar-container a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px; /* Space between links */
+  font-size: 18px;
+}
+
+.navbar-container a:hover {
+  text-decoration: underline;
+}
+
+
+/* Search Exercises Section */
+.exercise-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.exercise-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.exercise-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+}
+
+.exercise-card.selected {
+  background-color: #d4edda;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.select-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.select-button:hover {
+  background-color: #218838;
+}
+
+/* Selected Exercises Section */
+.selected-exercises {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.selected-exercises ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.selected-exercises li {
+  padding: 5px;
+  background-color: #e9ecef;
+  margin-bottom: 5px;
+}
+
+.save-button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: #138496;
+}
+
+/* Home Page Styles */
+.home-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-container h1 {
+  color: #333;
+}
+
+.home-container p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.home-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.home-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Workout Calendar Styles */
+.workout-calendar-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.workout-form input,
+.workout-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.workout-form button {
+  background-color: #28a745;
+}
+
+.workout-form button:hover {
+  background-color: #218838;
+}
+
+.calendar-tile p {
+  text-align: center;
+}
