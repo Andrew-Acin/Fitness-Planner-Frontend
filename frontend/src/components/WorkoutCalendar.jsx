@@ -16,7 +16,7 @@ const WorkoutCalendar = () => {
     // Fetch existing workouts from the server
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_BACKEND_URL}/api/workouts`);
+        const response = await axios.get('https://fitness-backend-production-d337.up.railway.app/api/workouts');
         setWorkouts(response.data);
       } catch (error) {
         console.error('Failed to fetch workouts:', error);
