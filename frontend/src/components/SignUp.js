@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Signup = () => {
-  const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-  });
-  
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+const SignUp = () => {
+  const [first_name, setFirstName] = useState('');
+  const [last_name, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-
     try {
-      const response = await axios.post('https://fitness-planner-backend-production.up.railway.app/api/auth/signup', formData);
-      alert('User created successfully');
-      // Reset form or redirect after successful signup
-    } catch (err) {
-      setError(err.response?.data?.message || 'Signup failed');
+      const response = await fetch('https://fitness-planner-backend-production.up.railway.app/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ first_name, last_name, email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.token); // Store the JWT token
+        localStorage.setItem('first_name', first_name); // Store the first name
+        alert('Signup successful!');
+        window.location.href = '/'; // Redirect user to the calendar page after successful signup
+      } else {
+        const errorData = await response.json();
+        console.error('Error:', errorData);
+        alert('Signup failed: ' + (errorData.message || 'An error occurred'));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Signup failed. Please try again.');
     }
   };
 
