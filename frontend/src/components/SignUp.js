@@ -9,7 +9,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://fitness-backend-production-d337.up.railway.app/api/auth/signup', {
+      const response = await fetch('https://fitness-planner-backend-production.up.railway.app/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

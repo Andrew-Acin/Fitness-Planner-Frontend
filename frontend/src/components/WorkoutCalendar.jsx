@@ -16,7 +16,7 @@ const WorkoutCalendar = () => {
     // Fetch existing workouts from the server
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get('fitness-planner-backend-production.up.railway.app/api/workouts');
+        const response = await axios.get('https://fitness-planner-backend-production.up.railway.app/api/workouts');
         setWorkouts(response.data);
       } catch (error) {
         console.error('Failed to fetch workouts:', error);
@@ -60,7 +60,7 @@ const WorkoutCalendar = () => {
 
       console.log('Data being sent to the backend:', newWorkoutData);
 
-      await axios.post('fitness-planner-backend-production.up.railway.app/api/workouts', newWorkoutData);
+      await axios.post('https://fitness-planner-backend-production.up.railway.app/api/workouts', newWorkoutData);
       alert('Workout added successfully');
       setNewWorkout({ name: '', scheduled_time: '' });
       setSelectedExercises([]);
