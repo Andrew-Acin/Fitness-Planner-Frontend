@@ -21,13 +21,11 @@ const SignUp = () => {
         const data = await response.json();
         localStorage.setItem('token', data.token); // Store the JWT token
         localStorage.setItem('first_name', first_name); // Store the first name
-        // Redirect user or update UI after successful signup
         alert('Signup successful!');
-        // Redirect user to the calendar page after successful signup
-        window.location.href = '/'; 
+        window.location.href = '/'; // Redirect user to the calendar page after successful signup
       } else {
         const errorData = await response.json();
-        console.error('Error:', errorData); // Log the entire error response
+        console.error('Error:', errorData);
         alert('Signup failed: ' + (errorData.message || 'An error occurred'));
       }
     } catch (error) {
@@ -35,6 +33,7 @@ const SignUp = () => {
       alert('Signup failed. Please try again.');
     }
   };
+
 
 
   return (
